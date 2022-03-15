@@ -49,9 +49,10 @@
         var views = getViews(video);
         if (views) {
             var videoLink = getVideoLink(video);
-            getPage(videoLink, function(response) {
-                views.append(' '+ getLikes(response) + 'likes');
-            });
+            // getPage(videoLink, function(response) {
+            //     views.append(' '+ getLikes(response) + 'likes');
+            // });
+            views.append('halloflo');
         }
     }
 
