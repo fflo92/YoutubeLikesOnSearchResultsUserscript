@@ -19,7 +19,7 @@
 
     var getViews = function(video) {
         var metadata = video.querySelector('div#metadata[class="style-scope ytd-video-meta-block"]');
-        return metadata ? metadata.children[0] : null;
+        return metadata ? metadata.children[1] : null;
     }
 
     var getVideoLink = function(video) {
