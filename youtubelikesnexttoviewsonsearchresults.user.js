@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Youtube video likes next to views on search results
 // @namespace    http://tampermonkey.net/
+// @description  nothing
 // @version      0.1
 // @author       fflo92
 // @match        https://www.youtube.com/results*
