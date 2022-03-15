@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Youtube video likes next to views on search results
+// @name         Youtube video likes next to posted date on search results
 // @namespace    http://tampermonkey.net/
 // @description  nothing
 // @version      0.1
@@ -17,7 +17,7 @@
         return contents[0].children;
     }
 
-    var getViews = function(video) {
+    var getPostedDate = function(video) {
         var metadata = video.querySelector('div#metadata[class="style-scope ytd-video-meta-block"]');
         return metadata ? metadata.children[1] : null;
     }
@@ -47,13 +47,12 @@
     }
 
     var processVideo = function(video) {
-        var views = getViews(video);
-        if (views) {
+        var date = getPostedDate(video);
+        if (date) {
             var videoLink = getVideoLink(video);
-            // getPage(videoLink, function(response) {
-            //     views.append(' '+ getLikes(response) + 'likes');
-            // });
-            views.append('halloflo');
+            getPage(videoLink, function(response) {
+                date.append(' '+ getLikes(response) + 'likes');
+            });
         }
     }
 
