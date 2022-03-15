@@ -42,7 +42,7 @@
         var leftAnchor = '"label":"';
         var rightIdx = pageSource.indexOf(rightAnchor);
         var chunk = pageSource.substring(rightIdx-30, rightIdx);
-        var leftIdx = chunk.indexOf(leftAnchor);
+        var leftIdx = chunk.indexOf('"label":"');
         return chunk.substring(leftIdx + leftAnchor.length)
     }
 
@@ -51,7 +51,7 @@
         if (date) {
             var videoLink = getVideoLink(video);
             getPage(videoLink, function(response) {
-                date.append(' '+ getLikes(response) + 'likes');
+                date.append(' '+ getLikes(response) + ' likes');
             });
         }
     }
